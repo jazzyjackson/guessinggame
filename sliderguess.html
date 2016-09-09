@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <script   src="http://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+      .header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      #slider {
+        margin: 0 auto 0 auto;
+        border-top: 1px solid #333333;
+        height: 30px;
+        width: 600px;
+
+      }
+      #arrow {
+        position: relative;
+        top: 0px;
+        left: -15px;
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+     /*   border-bottom: 20px solid #888888; */
+      }
+      #arrow p {
+        position: relative;
+        top: -40px;
+        left: -6px;
+        font-size: 30px;
+      }
+      #arrow p::selection {
+        background: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="row header">
+        <h1>
+          Take a Guess
+        </h1>
+      </div>
+      <div class="row" id="slider" >
+        <div id="arrow" style="left: -15; border-bottom: 20px solid #888888;">
+          <p>
+            0
+          </p>
+        </div>
+      </div>
+      <div class="row" id="debug">
+        <p>
+
+        </p>
+      </div>
+      <footer>
+
+      </footer>
+      <script src="gamelogic.js"></script>
+    </div>
+  </body>
+</html>
