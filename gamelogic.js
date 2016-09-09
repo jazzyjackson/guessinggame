@@ -45,9 +45,6 @@ document.body.addEventListener('mousemove', function(e){
   }
 })
 
-function displayGuess(){
-  document.getElementById("debug").childNodes[1].textContent = "Your last guess was " + latestguess;
-}
 
 function matchGenerator(){ //returns a function that takes a number as an argument.
                            //the distance of the guess from the random number enclosed is returned as a ratio

@@ -41,6 +41,22 @@
       #arrow p::selection {
         background: none;
       }
+      footer {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 60px;
+      }
+      footer img {
+        width: 200px;
+        position: absolute;
+        top: 10px;
+      }
+      footer p {
+        text-align: center;
+
+      }
+
     </style>
   </head>
   <body>
@@ -58,15 +74,19 @@
           </p>
         </div>
       </div>
-      <div class="row" id="debug">
-        <p>
-
-        </p>
-      </div>
-      <footer>
-
-      </footer>
-      <script src="gamelogic.js"></script>
     </div>
+      <footer class="footer">
+          <div class="container">
+            <img style="left: 50px;" src="images/fullstack.png">
+            <p>
+              Project by Colten Jackson
+            </p>
+            <img style="right: 50px;" src="images/gracehopper.png">
+          </div>
+      </footer>
+
+
+      <script src="gamelogic.js"></script>
+
   </body>
 </html>
