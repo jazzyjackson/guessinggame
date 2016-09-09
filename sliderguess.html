@@ -15,14 +15,15 @@
         margin-bottom: 50px;
       }
       #slider {
+        position: relative;
         margin: 0 auto 0 auto;
         border-top: 1px solid #333333;
         height: 30px;
         width: 600px;
 
       }
-      #arrow {
-        position: relative;
+      #arrow, .arrow {
+        position: absolute;
         top: 0px;
         left: -15px;
         width: 0;
@@ -51,7 +52,7 @@
         </h1>
       </div>
       <div class="row" id="slider" >
-        <div id="arrow" style="left: -15; border-bottom: 20px solid #888888;">
+        <div id="arrow" class="arrow" style="left: -15; border-bottom: 20px solid #888888;">
           <p>
             0
           </p>

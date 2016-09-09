@@ -22,11 +22,17 @@ document.body.addEventListener('mouseup', function(e){
         var blue = Math.floor(magnitudeOfWrongness * 255);
         arrowElement.style.borderBottomColor = "rgb("+red+",0,"+blue+")";
     }
-
+    attachGuessArrow();
     arrowSelected = false;
     //displayGuess();
   }
 })
+
+function attachGuessArrow(){
+  var newArrow = arrowElement.cloneNode(false)
+  newArrow.id = "";
+  sliderElement.insertBefore(newArrow, arrowElement);
+}
 
 
 document.body.addEventListener('mousemove', function(e){
