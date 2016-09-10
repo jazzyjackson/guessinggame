@@ -9,55 +9,7 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <style>
-      .header {
-        text-align: center;
-        margin-bottom: 50px;
-      }
-      #slider {
-        position: relative;
-        margin: 0 auto 0 auto;
-        border-top: 1px solid #333333;
-        height: 30px;
-        width: 600px;
-
-      }
-      #arrow, .arrow {
-        position: absolute;
-        top: 0px;
-        left: -15px;
-        width: 0;
-        height: 0;
-        border-left: 15px solid transparent;
-        border-right: 15px solid transparent;
-     /*   border-bottom: 20px solid #888888; */
-      }
-      #arrow p {
-        position: relative;
-        top: -40px;
-        left: -6px;
-        font-size: 30px;
-      }
-      #arrow p::selection {
-        background: none;
-      }
-      footer {
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        height: 60px;
-      }
-      footer img {
-        width: 200px;
-        position: absolute;
-        top: 10px;
-      }
-      footer p {
-        text-align: center;
-
-      }
-
-    </style>
+    <link rel="stylesheet" href="mystyle.css" type="text/css">
   </head>
   <body>
     <div class="container">
@@ -73,6 +25,15 @@
             0
           </p>
         </div>
+      </div>
+      <div class="row textguess">
+          <label>Or, enter a guess here</label>
+          <input id="guesstext" type="text" placeholder="#">
+      </div>
+      <div class="row textguess">
+          <input id="guessbutton" type="button" value="Guess!">
+          <input id="resetbutton" type="button" value="Reset.">
+
       </div>
     </div>
       <footer class="footer">
