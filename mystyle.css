@@ -1,6 +1,10 @@
 body {
   background-image: url("images/background.png");
 }
+.sliderlabel {
+  text-align: center;
+  margin-bottom: 30px;
+}
 .header {
   text-align: center;
   margin-top: 50px;
