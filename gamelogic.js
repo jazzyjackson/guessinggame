@@ -1,20 +1,67 @@
-
 var arrowSelected = false;
 var arrowElement = document.getElementById("arrow");
 var sliderElement = document.getElementById("slider");
 
 var checkGuess = matchGenerator();
 
-sliderElement.addEventListener('mousedown', function(e){
-  arrowSelected = true;
-})
 
-document.body.addEventListener('mouseup', function(e){
-  if(arrowSelected){
-    makeAGuess(Math.floor((Number(arrowElement.style.left.slice(0,-2)) + 15)/ 6));
 
+
+
+
+
+  sliderElement.addEventListener('mousedown', function(e){
+    arrowSelected = true;
+  })
+
+  document.body.addEventListener('mouseup', function(e){
+    if(arrowSelected){
+      makeAGuess(Math.floor((Number(arrowElement.style.left.slice(0,-2)) + 15)/ 6));
+
+    }
+  })
+
+
+  document.getElementById('guessbutton').addEventListener('click', function(){
+    var guessVal = document.getElementById('guesstext').value;
+    if(guessVal >= 0 && guessVal <= 100){
+      moveArrow(-15 + (guessVal * 6));
+    }
+    makeAGuess(guessVal);
+  })
+
+  document.body.addEventListener('mousemove', function(e){
+    if(arrowSelected){
+      moveArrow(Number(arrowElement.style.left.slice(0,-2)) + e.movementX);
+    }
+  })
+
+  document.getElementById('guesstext').addEventListener('keydown', function(e){
+    if(e.key == "Enter"){
+      document.getElementById('guessbutton').click();
+    }
+    console.log(e);
+
+  })
+
+  document.getElementById('resetbutton').addEventListener('click', function(){
+    document.getElementById('guesstext').value = '';
+    document.getElementById('guesstext').style.borderColor = "black";
+    resetSlider();
+
+  })
+
+function resetSlider(){
+
+  arrow.style.left = "-15px";
+  arrow.style.borderBottomColor = "#888888";
+  arrow.childNodes[1].innerText = 0;
+  while(slider.childNodes.length > 2){
+    slider.removeChild(slider.firstChild);
   }
-})
+
+}
+
 
 function makeAGuess(latestguess){
     var magnitudeOfWrongness = checkGuess(latestguess);
@@ -42,19 +89,6 @@ function attachGuessArrow(){
   sliderElement.insertBefore(newArrow, arrowElement);
 }
 
-document.getElementById('guessbutton').addEventListener('click', function(){
-  var guessVal = document.getElementById('guesstext').value;
-  if(guessVal >= 0 && guessVal <= 100){
-    moveArrow(-15 + (guessVal * 6));
-  }
-  makeAGuess(guessVal);
-})
-
-document.body.addEventListener('mousemove', function(e){
-  if(arrowSelected){
-    moveArrow(Number(arrowElement.style.left.slice(0,-2)) + e.movementX);
-  }
-})
 
 function moveArrow(newpos){
   if(newpos >= -15 && newpos <= 585){
@@ -64,13 +98,7 @@ function moveArrow(newpos){
 }
 
 
-document.getElementById('guesstext').addEventListener('keydown', function(e){
-  if(e.key == "Enter"){
-    document.getElementById('guessbutton').click();
-  }
-  console.log(e);
 
-})
 
 function matchGenerator(){ //returns a function that takes a number as an argument.
 //the distance of the guess from the random number enclosed is returned as a ratio
@@ -87,11 +115,4 @@ function matchGenerator(){ //returns a function that takes a number as an argume
     }
   }
 }
-
-document.getElementById('resetbutton').addEventListener('click', function(){
-  document.getElementById('slider').innerHTML = '<div id="arrow" class="arrow" style="left: -15; border-bottom: 20px solid #888888;"><p>0</p></div>'
-  document.getElementById('guesstext').value = '';
-  document.getElementById('guesstext').style.borderColor = "black";
-})
-
 
